@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Primer Mes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/league.min.css">
+    <style>
+        body {
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+        }
+        .reveal h1, .reveal h2, .reveal p {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .reveal .slides section {
+            padding: 20px;
+        }
+        .poema-container {
+            max-height: 70vh;
+            overflow-y: auto;
+            padding: 15px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .cat, .heart {
+            position: absolute;
+            font-size: 40px;
+            animation: fall 3s linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+        button {
+            padding: 15px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            background-color: #ff4d6d;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #ff1e4d;
+        }
+        @media (max-width: 600px) {
+            .reveal h1 { font-size: 28px; }
+            .reveal h2 { font-size: 22px; }
+            .reveal p { font-size: 16px; }
+            .poema-container { max-height: 60vh; }
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Feliz Primer Mes, mi princesa</h1>
+                <div class="poema-container">
+                    <h2>Zara de los Angeles Blanco Herrera</h2>
+                    <p>"Un Mes de Eternidad"<br><br>
+                    Hoy cumple el tiempo un mes de ser testigo de aquella luz que en mí sembró tu risa, de noches convertidas en promesas, y un corazón que late en melodía. Tus ojos son el mapa que me guía a puertos de ternura infinita y cierta, donde el amor, con manos de poeta, escribe versos en nuestra alma abierta. Un mes de descubrir tus madrugadas, de compartir silencios y palabras, de sentir que el universo nos abraza y que el destino, al fin, nos encauzaba. Eres el vuelo que mi alma esperaba, la primavera en medio de la nada, el eco suave de una voz amada que convierte el temor en confianza. Prometo ser refugio en cada herida, compañero de sueños y caminos, y aunque un mes es apenas un latido, contigo quiero eternidad de siglos. Feliz primer mes, amor… Esta aventura es solo el prólogo de nuestra locura.</p>
+                </div>
+                <button onclick="Reveal.next()">Presiona aquí para continuar</button>
+            </section>
+            <section>
+                <h2>Siempre juntos</h2>
+                <p>Gracias por ser parte de mi vida, por cada momento especial que hemos compartido.</p>
+            </section>
+            <section>
+                <h2>Te amo</h2>
+                <p>Feliz mes para los dos. Por muchos meses más juntos, mi amor.</p>
+            </section>
+            <section>
+                <h2>PD</h2>
+                <p>Tuve que aprender un poco de vainas para elaborar esta pag super sencilla, JAJAJAJJA</p>
+            </section>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({ 
+            transition: 'convex',
+            width: '100%',
+            height: '100%'
+        });
+        
+        function createElements(type, emoji) {
+            for (let i = 0; i < 10; i++) {
+                let element = document.createElement("div");
+                element.classList.add(type);
+                element.innerHTML = emoji;
+                element.style.left = Math.random() * 100 + "vw";
+                element.style.top = "-10vh";
+                element.style.fontSize = Math.random() * 30 + 20 + "px";
+                document.body.appendChild(element);
+                setTimeout(() => element.remove(), 3000);
+            }
+        }
+        setInterval(() => createElements("cat", "🐱"), 1000);
+        setInterval(() => createElements("heart", "❤️"), 1000);
+    </script>
+</body>
+</html>
